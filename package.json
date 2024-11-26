@@ -1,0 +1,46 @@
+{
+  "name": "module-video-render",
+  "version": "1.0.0",
+  "description": "My Remotion video",
+  "repository": {},
+  "license": "UNLICENSED",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@remotion/bundler": "^4.0.231",
+    "@remotion/cli": "4.0.231",
+    "@remotion/renderer": "^4.0.231",
+    "@remotion/captions": "4.0.231",
+    "@remotion/tailwind": "4.0.231",
+    "@remotion/zod-types": "4.0.231",
+    "@remotion/google-fonts": "4.0.231",
+    "@remotion/animated-emoji": "4.0.231",
+    "@remotion/shapes":  "4.0.231",
+    "@remotion/animation-utils": "^4.0.231",
+    "@remotion/layout-utils": "^4.0.231",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "remotion": "4.0.231",
+    "zod": "3.22.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "@remotion/eslint-config": "4.0.231",
+    "@types/react": "18.3.1",
+    "@types/web": "0.0.166",
+    "eslint": "8.56.0",
+    "prettier": "3.3.3",
+    "typescript": "5.5.4"
+  },
+  "scripts": {
+    "dev": "remotion studio",
+    "build": "remotion bundle",
+    "upgrade": "remotion upgrade",
+    "lint": "eslint src --ext ts,tsx,js,jsx && tsc"
+  },
+  "sideEffects": [
+    "*.css"
+  ]
+}

@@ -1,0 +1,17 @@
+services:
+  save-on-file:
+    build: .
+    ports:
+      - "4444:4444"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - ${DRIVE_PATH}/files:/out
+    networks:
+      - my-network
+    env_file:
+      - .env
+
+networks:
+  my-network:
+    driver: bridge
