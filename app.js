@@ -10,7 +10,7 @@ app.use(express.json());
 app.use(cors())
 
 app.post("/run", async (req, res) => {
-    await render(req?.body?.inputsData?.items)
+    await render(req?.body?.inputsData?.items === 'string' ? JSON.parse(req?.body?.inputsData?.items) : req?.body?.inputsData?.items)
 
     res.json({
         text:''
