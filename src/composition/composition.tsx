@@ -1,8 +1,8 @@
 import React, {useCallback} from 'react';
 import {AbsoluteFill} from 'remotion';
 import type {Item} from './item';
-// import {Layer} from './Layer';
-// import { CaptionView } from '../caption-view';
+import {Layer} from './Layer';
+import { CaptionView } from '../caption-view';
 import './setup-fonts';
 
 export type CompositionProps = {
@@ -29,12 +29,12 @@ export const Composition: React.FC<CompositionProps> = ({
     <>
       <AbsoluteFill style={outer}>
         <AbsoluteFill style={layerContainer}>
-          {/*{[].map((item) => {*/}
-          {/*  return <Layer key={item.id} item={item} />;*/}
-          {/*})}*/}
+          {items?.map((item: any) => {
+            return <Layer key={item.id} item={item} />;
+          })}
         </AbsoluteFill>
       </AbsoluteFill>
-      {/*<CaptionView items={items} />*/}
+      <CaptionView items={items} />
     </>
   );
 };
