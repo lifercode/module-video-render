@@ -23,12 +23,13 @@ const layerContainer: React.CSSProperties = {
 export const Composition: React.FC<CompositionProps> = ({
   items = [],
 }) => {
+  console.log('items 🚀', items)
 
   return (
     <>
       <AbsoluteFill style={outer}>
         <AbsoluteFill style={layerContainer}>
-          {items.map((item) => {
+          {items?.map((item) => {
             return <Layer key={item.id} item={item} />;
           })}
         </AbsoluteFill>
