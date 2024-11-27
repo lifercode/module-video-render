@@ -12,7 +12,7 @@ app.use(cors())
 app.post("/run", async (req, res) => {
     const items = req?.body?.inputsData?.items
     console.log({items})
-    const isItemsString = items === 'string'
+    const isItemsString = typeof items === 'string'
     console.log({isItemsString})
     const payload = isItemsString ? JSON.parse(items) : items
     console.log({payload})
