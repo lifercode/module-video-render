@@ -10,7 +10,11 @@ app.use(express.json());
 app.use(cors())
 
 app.post("/run", async (req, res) => {
-    const payload = req?.body?.inputsData?.items === 'string' ? JSON.parse(req?.body?.inputsData?.items) : req?.body?.inputsData?.items
+    const items = req?.body?.inputsData?.items
+    console.log({items})
+    const isItemsString = items === 'string'
+    console.log({isItemsString})
+    const payload = isItemsString ? JSON.parse(items) : items
     console.log({payload})
     await render(payload)
 
