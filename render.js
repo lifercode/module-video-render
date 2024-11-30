@@ -1,6 +1,7 @@
 import {bundle} from '@remotion/bundler';
 import {renderMedia, selectComposition} from '@remotion/renderer';
 import {createRequire} from 'node:module';
+import {nanoid} from 'nanoid'
 
 const require = createRequire(import.meta.url);
 
@@ -27,7 +28,7 @@ async function render(items = []) {
     codec: 'h264',
     composition,
     serveUrl: bundled,
-    outputLocation: `out/rugg-video-${composition.id}-${new Date()}.mp4`,
+    outputLocation: `out/rugg-video-${composition.id}-${nanoid()}.mp4`,
     chromiumOptions: {
       enableMultiProcessOnLinux: true,
     },
