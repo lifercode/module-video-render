@@ -23,7 +23,7 @@ async function render(items = []) {
 
   console.log('Starting to render composition');
 
-  await renderMedia({
+  const result = await renderMedia({
     codec: 'h264',
     composition,
     serveUrl: bundled,
@@ -33,6 +33,8 @@ async function render(items = []) {
     },
     inputProps,
   });
+
+  console.log('result 🍪', result)
 
   console.log(`Rendered composition ${composition.id}.`);
 }
