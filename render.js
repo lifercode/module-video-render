@@ -27,7 +27,7 @@ async function render(items = []) {
     codec: 'h264',
     composition,
     serveUrl: bundled,
-    outputLocation: `out/${composition.id}.mp4`,
+    outputLocation: `out/rugg-video-${composition.id}-${new Date()}.mp4`,
     chromiumOptions: {
       enableMultiProcessOnLinux: true,
     },
